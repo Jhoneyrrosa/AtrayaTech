@@ -24,3 +24,38 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* The story uses native scroll; reduced motion and no-JS retain a compact hero. */
+@media (prefers-reduced-motion: no-preference) {
+  #inicio:has(canvas[data-frame]) { min-height: 450svh; }
+  #inicio:has(canvas[data-frame]) .atraya-story-stage { position: sticky; top: 0; height: 100svh; }
+}
+
+/* Original logo pixels, with only the surrounding image padding clipped. */
+.atraya-brand { position: relative; display: block; flex-shrink: 0; width: 200px; height: 44px; overflow: hidden; }
+.atraya-brand-image { position: absolute; width: 250px; max-width: none; height: auto; left: -24px; top: -20px; }
+.atraya-perspective { position: relative; background: #050c14; padding: clamp(72px, 8vw, 140px) 0 100px; }
+.perspective-frame { width: calc(100% - 48px); max-width: 1680px; margin-inline: auto; }
+.perspective-index { display: flex; justify-content: space-between; gap: 24px; padding: 22px 0; border-top: 1px solid #ffffff24; color: #79bfb8; font-size: 10px; letter-spacing: .18em; }
+.perspective-index > span { color: #718895; }
+.perspective-heading { margin-top: 64px; font-weight: 500; font-size: clamp(40px, 7.5vw, 126px); line-height: 1.04; letter-spacing: -.06em; }
+.perspective-premise { display: block; color: #91a2af; }
+.perspective-answer { display: block; margin-top: 36px; margin-left: 22%; color: #e7eae6; }
+.perspective-period { color: #79bfb8; }
+.perspective-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 72px; padding-top: 28px; border-top: 1px solid #ffffff24; }
+.perspective-number { align-self: end; font-size: clamp(72px, 12vw, 180px); line-height: .8; letter-spacing: -.07em; color: #ffffff0d; }
+.perspective-copy { border-left: 1px solid #79bfb84d; padding-left: 28px; }
+.perspective-copy > p { max-width: 550px; font-size: clamp(17px, 1.65vw, 24px); line-height: 1.65; color: #a9b5bf; }
+.perspective-topics { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 32px; color: #79bfb8; font-size: 9px; letter-spacing: .15em; }
+@media (min-width: 768px) { .perspective-frame { width: calc(100% - 96px); } }
+@media (min-width: 1280px) { .perspective-frame { width: calc(100% - 160px); } }
+@media (max-width: 600px) {
+  .atraya-brand { width: 164px; height: 38px; }
+  .atraya-brand-image { width: 205px; left: -20px; top: -16px; }
+  .perspective-index > span { display: none; }
+  .perspective-answer { margin-left: 7%; }
+  .perspective-bottom { grid-template-columns: 48px 1fr; gap: 16px; margin-top: 48px; }
+  .perspective-number { font-size: 48px; align-self: start; }
+  .perspective-copy { padding-left: 16px; }
+  .perspective-topics { gap: 14px; }
+}
