@@ -9,15 +9,11 @@ type AtrayaSceneProps = {
   contactHref?: string;
 };
 
-function ScrollNavbar({ contactHref }: AtrayaSceneProps) {
+function ScrollNavbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#050c14]/90 backdrop-blur-xl">
-      <nav aria-label="Navegação principal" className="mx-auto flex min-h-18 max-w-[1440px] items-center justify-between gap-6 px-6 sm:px-12 lg:px-20">
+      <nav aria-label="Navegação principal" className="mx-auto flex min-h-18 max-w-[1440px] items-center justify-center gap-6 px-6 sm:px-12 lg:px-20">
         <a href="#inicio" aria-label="Atraya — início" className="atraya-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#76c9bf]"><Image src="/images/atraya-logo.png" alt="ATRAYA" width={2172} height={724} unoptimized className="atraya-brand-image" /></a>
-        <div className="flex items-center gap-6 text-xs font-medium sm:text-sm">
-          <a href="#inicio" className="text-[#acb7bf] transition-colors hover:text-[#e7eae6] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#76c9bf]">Início</a>
-          {contactHref && <a href={contactHref} className="rounded-[3px] border border-white/25 px-4 py-3 text-[#e7eae6] transition-colors hover:border-[#76c9bf] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#76c9bf]">Falar com a Atraya <span aria-hidden="true" className="ml-2 text-[#76c9bf]">↗</span></a>}
-        </div>
       </nav>
     </header>
   );
@@ -127,7 +123,7 @@ export default function AtrayaScene({ contactHref }: AtrayaSceneProps) {
 
   return (
     <section id="inicio" ref={container} lang="pt-BR" aria-labelledby="atraya-hero-title" style={{ fontFamily: '"Manrope Variable", sans-serif' }} className="relative w-full bg-[#050c14] text-[#e7eae6]">
-      <ScrollNavbar contactHref={contactHref} />
+      <ScrollNavbar />
       <div className="atraya-story-stage relative isolate flex min-h-svh items-center overflow-hidden">
       <div data-hero-background aria-hidden="true" className="pointer-events-none absolute inset-0 -z-20">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url(/sequences/scene-01/frame-0001.webp)" }} />
